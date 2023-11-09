@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Trim github ref
         run: |
-          echo "${github.ref}"
+          echo "$github.ref"
           echo "${github.ref##*/}"
 
 
