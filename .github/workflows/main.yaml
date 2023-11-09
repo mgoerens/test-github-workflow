@@ -1,0 +1,42 @@
+name: main
+on: push
+
+jobs:
+  testing:
+    name: Test job
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Trim github ref
+        run: |
+          echo "${github.ref}"
+          echo "${github.ref##*/}"
+
+
+#      - uses: actions/checkout@v2
+#
+#      - run: python script1.py 
+#        id: step1
+#
+#      - run: python script2.py -a '${{ steps.step1.outputs.my_dict }}'
+
+#      - uses: actions/checkout@v2
+#      - name: Use yq
+#        id: get_test
+#        uses: mikefarah/yq@v4.35.1
+#        with:
+#          cmd: yq .metadata.test toto.yaml
+#
+#      - name: print result
+#        run: echo ${{ format ('./pr-branch/{0}', steps.get_test.outputs.result) }}
+
+#      - name: Set boolean output parameter
+#        id: step1
+#        run: echo "my_bool=False" >> $GITHUB_OUTPUT
+#
+#      - name: if bool False
+#        if: ${{ steps.step1.outputs.my_bool == 'False' }}
+#        run: echo "Bool is False !!"
+#
+#      - name: if bool Trus
+#        if: ${{ steps.step1.outputs.my_bool == 'True' }}
+#        run: echo "Bool is True !!"
