@@ -9,7 +9,7 @@ jobs:
       - name: Trim github ref
         run: |
           echo "${{ github.ref }}"
-          echo "${ {github.ref##*/ }}"
+          echo "${{ github.ref##*/ }}"
 
 
 #      - uses: actions/checkout@v2
