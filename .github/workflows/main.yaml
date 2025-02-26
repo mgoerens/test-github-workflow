@@ -8,4 +8,4 @@ jobs:
     steps:
 
       - run: |
-          wget --progress=bar:force:noscroll https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+          wget --quiet https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
