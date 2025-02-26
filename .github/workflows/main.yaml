@@ -12,8 +12,8 @@ jobs:
 
       - run: |
           wget --quiet https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
-          tar -zxvf openshift-client-linux.tar.gz oc -C .
-          mv -v oc /usr/local/bin/
+          tar -zxvf openshift-client-linux.tar.gz oc -C /usr/local/bin/
+          # mv -v oc /usr/local/bin/
           # echo "$PWD/oc" >> $GITHUB_PATH
           rm -f openshift-client-linux.tar.gz
           oc version --client
