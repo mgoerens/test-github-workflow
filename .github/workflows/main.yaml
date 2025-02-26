@@ -8,4 +8,14 @@ jobs:
     steps:
 
       - run: |
-          echo $GITHUB_PATH
+          echo $PATH
+
+      - run: |
+          wget --quiet https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+          tar -zxvf openshift-client-linux.tar.gz oc -C .
+          echo "$PWD/oc" >> $GITHUB_PATH
+          rm -f openshift-client-linux.tar.gz
+          oc version --client
+
+      - run: |
+          oc version --client
