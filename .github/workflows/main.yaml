@@ -6,38 +6,6 @@ jobs:
     name: Test job
     runs-on: ubuntu-22.04
     steps:
-      - name: Trim github ref
-        run: |
-          echo "${{ github.ref }}"
-          echo "${GITHUB_REF}"
-          echo "${GITHUB_REF##*/}"
 
-
-#      - uses: actions/checkout@v2
-#
-#      - run: python script1.py 
-#        id: step1
-#
-#      - run: python script2.py -a '${{ steps.step1.outputs.my_dict }}'
-
-#      - uses: actions/checkout@v2
-#      - name: Use yq
-#        id: get_test
-#        uses: mikefarah/yq@v4.35.1
-#        with:
-#          cmd: yq .metadata.test toto.yaml
-#
-#      - name: print result
-#        run: echo ${{ format ('./pr-branch/{0}', steps.get_test.outputs.result) }}
-
-#      - name: Set boolean output parameter
-#        id: step1
-#        run: echo "my_bool=False" >> $GITHUB_OUTPUT
-#
-#      - name: if bool False
-#        if: ${{ steps.step1.outputs.my_bool == 'False' }}
-#        run: echo "Bool is False !!"
-#
-#      - name: if bool Trus
-#        if: ${{ steps.step1.outputs.my_bool == 'True' }}
-#        run: echo "Bool is True !!"
+      - run: |
+          wget --progress=dot:mega https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
