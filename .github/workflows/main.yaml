@@ -12,6 +12,7 @@ jobs:
           python-version: '3.10'
 
       - run: |
+          python3 -m venv ve1
           pip install requests
 
 
@@ -25,4 +26,5 @@ jobs:
           python-version: '3.10'
 
       - run: |
+          python3 -m venv ve1
           pip install requests
