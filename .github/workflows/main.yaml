@@ -24,6 +24,7 @@ jobs:
   check:
     name: test
     runs-on: ubuntu-22.04
+    needs: [testing]
     steps:
       - uses: actions/setup-python@v5
         id: setup-python
