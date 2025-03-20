@@ -11,15 +11,15 @@ jobs:
         with:
           python-version: '3.10'
 
-      - run: |
-          python3 -m venv ve1
-          pip install requests
-
-      - name: Cache virtualenv on cache-miss
-        uses: actions/cache/save@v4
+      - name: Cache virtualenv
+        uses: actions/cache@v4
         with:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}
           path: ./ve1
+
+      - run: |
+          python3 -m venv ve1
+          pip install requests
 
   check:
     name: test
@@ -32,7 +32,7 @@ jobs:
           python-version: '3.10'
 
       - name: Attempt to restore cached virtualenv
-        uses: actions/cache/restore@v4
+        uses: actions/cache@v4
         with:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}
           path: ./ve1
